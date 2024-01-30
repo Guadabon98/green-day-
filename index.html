@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN DAY SAVIORS TOUR</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(228, 36, 138); /* Puedes usar el nombre del color o su código hexadecimal */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: green;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #555;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GREEN DAY </h1>
+    </header>
+
+    <section>
+        <h2>SAVIORS TOUR</h2>
+    </section>
+
+</body>
+<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #carousel-container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #image-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-image {
+            width: 100%;
+            min-width: 100%;
+            object-fit: cover;
+        }
+
+        #prev-btn, #next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #prev-btn {
+            left: 10px;
+        }
+
+        #next-btn {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="carousel-container">
+    <div id="image-carousel">
+        <img class="carousel-image" src="imagen1.jpg" alt="Imagen 1">
+        <img class="carousel-image" src="imagen4.png" alt="Imagen 2">
+        <img class="carousel-image" src="imagen3.jpg" alt="Imagen 3">
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+    <div id="prev-btn" onclick="prevImage()">&#10094;</div>
+    <div id="next-btn" onclick="nextImage()">&#10095;</div>
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const carousel = document.getElementById('image-carousel');
+        const totalImages = carousel.children.length;
+        index = (index + totalImages) % totalImages;
+        const translateValue = -index * 100 + '%';
+        carousel.style.transform = 'translateX(' + translateValue + ')';
+        currentIndex = index;
+    }
+
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
+
+    function nextImage() {
+        showImage(currentIndex + 1);
+    }
+
+    // Inicia el carrusel mostrando la primera imagen
+    showImage(0);
+</script>
+
+</body>
+</html>
+
